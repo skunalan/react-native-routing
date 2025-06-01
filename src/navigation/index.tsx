@@ -5,7 +5,6 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "react-native";
 
-import newspaper from "../assets/newspaper.png";
 import HomeScreen from "./screens/home";
 import WelcomeScreen from "./screens/welcome";
 import LoginScreen from "./screens/login";

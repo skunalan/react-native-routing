@@ -10,6 +10,7 @@ module.exports = {
         foreground: "rgb(0, 0, 0)",
         text: "rgb(50, 50, 50)",
         primary: "rgb(4, 147, 209)",
+        secondary: "rgb(131, 135, 138)",
         muted: "rgb(243, 245, 247)",
         placeholder: "rgb(114, 118, 123)",
       }
