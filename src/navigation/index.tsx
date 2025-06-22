@@ -19,7 +19,7 @@ const RootStack = createNativeStackNavigator({
       paddingHorizontal: Number(CONSTANTS.spacing.screenPadding)
     },
   },
-  initialRouteName: "Login",
+  initialRouteName: "Welcome",
   screens: {
     Welcome: {
       screen: WelcomeScreen,
