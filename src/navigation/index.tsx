@@ -16,17 +16,13 @@ const RootStack = createNativeStackNavigator({
     headerShown: false,
     contentStyle: {
       backgroundColor: CONSTANTS.colors.background,
-      paddingHorizontal: Number(CONSTANTS.spacing.screenPadding)
+      paddingHorizontal: Number(CONSTANTS.spacing.screenPadding),
     },
   },
   initialRouteName: "Welcome",
   screens: {
     Welcome: {
       screen: WelcomeScreen,
-    },
-    Home: {
-      screen: HomeScreen,
-      
     },
     Login: {
       screen: LoginScreen,
@@ -37,7 +33,16 @@ const RootStack = createNativeStackNavigator({
   },
 });
 
+const AuthStack = createNativeStackNavigator({
+  screens: {
+    Home: {
+      screen: HomeScreen,
+    },
+  },
+});
 export const Navigation = createStaticNavigation(RootStack);
+export const AuthNavigation = createStaticNavigation(AuthStack);
+
 
 type RootStackParamList = StaticParamList<typeof RootStack>;
 
