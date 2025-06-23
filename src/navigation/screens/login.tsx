@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { useForm } from "react-hook-form";
 import LoginInput from "../../components/login-input";
 import { useNavigation } from "@react-navigation/native";
 import useAuthStore from "../../store/auth";
@@ -11,6 +12,8 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const { setLoggedIn } = useAuthStore();
+
+  const { control, handleSubmit } = useForm();
 
   const handleLogin = () => {
     setLoggedIn(true);
@@ -31,11 +34,16 @@ const LoginScreen = () => {
             to Book<Text className="color-primary">Track</Text> !
           </Text>
         </View>
-        <LoginInput label="E-mail" />
-        <LoginInput label="Password" />
+        <LoginInput label="E-mail" name="email" control={control} />
+        <LoginInput
+          label="Password"
+          name="password"
+          control={control}
+          secureTextEntry={true}
+        />
 
         <TouchableOpacity
-          onPress={handleLogin}
+          onPress={handleSubmit(handleLogin)}
           className="bg-primary py-4 border-2 border-primary rounded-xl items-center justify-center mt-5"
         >
           <Text className="color-muted font-bold text-xl">Enter</Text>

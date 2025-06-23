@@ -3,12 +3,15 @@ import React from "react";
 import LoginInput from "../../components/login-input";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useForm } from "react-hook-form";
 
 const iconStyle = { width: 22, height: 22 };
 
 const SignupScreen = () => {
   const navigation = useNavigation();
-  
+
+  const { control, handleSubmit } = useForm();
+
   const handleTermsPress = () => {};
   const handlePrivacyPress = () => {};
 
@@ -30,10 +33,20 @@ const SignupScreen = () => {
             Book<Text className="color-primary">Track</Text> !
           </Text>
         </View>
-        <LoginInput label="Name" />
-        <LoginInput label="E-mail" />
-        <LoginInput label="Password" />
-        <LoginInput label="Re-enter password" />
+        <LoginInput label="Name" name="name" control={control} />
+        <LoginInput label="E-mail" name="email" control={control} />
+        <LoginInput
+          label="Password"
+          name="password"
+          control={control}
+          secureTextEntry={true}
+        />
+        <LoginInput
+          label="Re-enter password"
+          name="repassword"
+          control={control}
+          secureTextEntry={true}
+        />
 
         <TouchableOpacity className="bg-primary py-4 border-2 border-primary rounded-xl items-center justify-center mt-5">
           <Text className="color-muted font-bold text-xl">Enter</Text>
