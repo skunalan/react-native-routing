@@ -34,6 +34,13 @@ const RootStack = createNativeStackNavigator({
 });
 
 const AuthStack = createNativeStackNavigator({
+  screenOptions: {
+    headerShown: false,
+    contentStyle: {
+      backgroundColor: CONSTANTS.colors.background,
+      paddingHorizontal: Number(CONSTANTS.spacing.screenPadding),
+    },
+  },
   screens: {
     Home: {
       screen: HomeScreen,
