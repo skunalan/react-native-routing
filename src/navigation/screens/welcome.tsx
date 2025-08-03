@@ -19,11 +19,11 @@ const WelcomeScreen = () => {
         read-all in one place
       </Text>
       <View className="flex-row justify-center mt-20 gap-8">
-        <TouchableOpacity className="bg-muted w-40 py-3 border-2 border-primary rounded-xl items-center justify-center">
-        <Text className="color-primary font-bold text-xl" onPress={() => navigation.navigate("Login")}>Login</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")} className="bg-muted w-40 py-3 border-2 border-primary rounded-xl items-center justify-center">
+        <Text className="color-primary font-bold text-xl" >Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity className="bg-primary w-40 py-3 border-2 border-primary rounded-xl items-center justify-center">
-        <Text className="color-muted font-bold text-xl" onPress={() => navigation.navigate("Signup")}>Sign up</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Signup")} className="bg-primary w-40 py-3 border-2 border-primary rounded-xl items-center justify-center">
+        <Text className="color-muted font-bold text-xl" >Sign up</Text>
       </TouchableOpacity>
       </View>
     </>
